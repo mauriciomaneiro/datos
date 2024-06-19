@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida y Días Vividos</title>    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">¡Bienvenido/a!</h1>
+
+        
+        <script>            
+            const nombres = ["Juan", "María", "Carlos"];
+            const edades = [30, 25, 28];
+            const ciudades = ["Buenos Aires", "Córdoba", "Rosario"];
+            const indiceAleatorio = Math.floor(Math.random() * nombres.length);
+            const nombreAleatorio = nombres[indiceAleatorio];
+            const edadAleatoria = edades[indiceAleatorio];
+            const ciudadAleatoria = ciudades[indiceAleatorio];            
+            const mensajeBienvenidaAleatorio = `¡Bienvenido/a, ${nombreAleatorio}! Tienes ${edadAleatoria} años y vives en ${ciudadAleatoria}.`;
+            document.write(`<p>${mensajeBienvenidaAleatorio}</p>`);           
+            const nombreUsuario = prompt("Ingrese su nombre: ");
+            const edadUsuario = parseInt(prompt("Ingrese su edad: "));
+            const ciudadUsuario = prompt("Ingrese su ciudad: ");
+            const mensajeBienvenidaUsuario = `¡Bienvenido/a, ${nombreUsuario}! Tienes ${edadUsuario} años y vives en ${ciudadUsuario}.`;
+            document.write(`<p>${mensajeBienvenidaUsuario}</p>`);
+            const fechaNacimientoStr = prompt("Ingrese su fecha de nacimiento (dd/mm/aaaa): ");
+            const fechaNacimiento = new Date(fechaNacimientoStr);
+            const hoy = new Date();
+            const milisegundosPorDia = 24 * 60 * 60 * 1000;
+            const diasVividos = Math.floor((hoy - fechaNacimiento) / milisegundosPorDia);
+            const mensajeDiasVividos = `Has vivido aproximadamente ${diasVividos} días desde que naciste.`;
+            document.write(`<p>${mensajeDiasVividos}</p>`);
+        </script>
+    </div>
+</body>
+</html>
